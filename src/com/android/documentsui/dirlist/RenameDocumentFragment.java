@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -39,6 +40,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.android.documentsui.BaseActivity;
+import com.android.documentsui.LengthFilterToast;
 import com.android.documentsui.Metrics;
 import com.android.documentsui.R;
 import com.android.documentsui.base.DocumentInfo;
@@ -78,6 +80,9 @@ public class RenameDocumentFragment extends DialogFragment {
         View view = dialogInflater.inflate(R.layout.dialog_file_name, null, false);
 
         mEditText = (EditText) view.findViewById(android.R.id.text1);
+        int displayNameLength = (mDocument == null || mDocument.displayName == null) ? 0 : mDocument.displayName.length();
+        int maxLength = Math.max(Shared.MAX_TEXT_LENGTH, displayNameLength);
+        mEditText.setFilters(new InputFilter[] {new LengthFilterToast(getActivity(),maxLength)});
         mRenameInputWrapper = (TextInputLayout) view.findViewById(R.id.input_wrapper);
         mRenameInputWrapper.setHint(getString(R.string.input_hint_rename));
         builder.setTitle(R.string.menu_rename);

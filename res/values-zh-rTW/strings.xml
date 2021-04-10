@@ -22,6 +22,7 @@
     <skip />
     <!-- no translation found for launcher_label (799410258349837668) -->
     <skip />
+    <string name="length_limited">已達到最大長度</string>
     <string name="title_open" msgid="3165686459158020921">"在以下位置開啟檔案"</string>
     <string name="title_save" msgid="4384490653102710025">"儲存至"</string>
     <string name="menu_create_dir" msgid="2413624798689091042">"新資料夾"</string>

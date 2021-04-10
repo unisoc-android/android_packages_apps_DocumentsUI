@@ -31,7 +31,7 @@
     <string name="title_open">Open from</string>
     <!-- Action bar title prompting user to choose a location to save a document to [CHAR LIMIT=32] -->
     <string name="title_save">Save to</string>
-
+    <string name="length_limited">The name up to the max length</string>
     <!-- Menu item that creates a new directory/folder at the current location [CHAR LIMIT=28] -->
     <string name="menu_create_dir">New folder</string>
     <!-- Menu item that switches view to show documents as a large-format grid of thumbnails [CHAR LIMIT=28] -->
